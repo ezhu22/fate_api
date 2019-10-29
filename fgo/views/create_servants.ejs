@@ -1,0 +1,926 @@
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class='col'>
+    <div class='row justify-content-center'>
+        <div class='col'>
+          <h1>Add Servant:</h1>
+          <form action="/api/v1/servants" method="POST" id='servants_form'>
+            <div class='form-group'>
+              <div class='row text-center'>
+                <div class='col'>
+                  <div class='input-group mb-3'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Name:</span>
+                    </div>
+                    <input class='form-control' type='text' name='name'>
+                  </div>
+                  <div class='row'>
+                    <div class='input-group mb-3 col-4'>
+                      <div class='input-group-prepend'>
+                        <span class='input-group-text font-weight-bold'>Class:</span>
+                      </div>
+                      <select name='class' form='servants_form' class='form-control'>
+                        <option value=''></option>
+                        <option value='Saber'>Saber</option>
+                        <option value='Archer'>Archer</option>
+                        <option value='Lancer'>Lancer</option>
+                        <option value='Rider'>Rider</option>
+                        <option value='Caster'>Caster</option>
+                        <option value='Assassin'>Assassin</option>
+                        <option value='Berserker'>Berserker</option>
+                        <option value='Avenger'>Avenger</option>
+                        <option value='Alter Ego'>Alter Ego</option>
+                        <option value='Foreigner'>Foreigner</option>
+                        <option value='Moon Cancer'>Moon Cancer</option>
+                        <option value='Shielder'>Shielder</option>
+                      </select>
+                    </div>
+                    <div class='input-group mb-3 col-2'>
+                      <div class='input-group-prepend'>
+                        <span class='input-group-text font-weight-bold'>ID:</span>
+                      </div>
+                      <input type='number' class='form-control' name='id'>
+                    </div>
+                    <div class='input-group mb-3 col-3'>
+                      <div class='input-group-prepend'>
+                        <span class='input-group-text font-weight-bold'>Rarity:</span>
+                      </div>
+                      <input type='number' class='form-control' name='rarity'>
+                    </div>
+                    <div class='input-group mb-3 col-3'>
+                      <div class='input-group-prepend'>
+                        <span class='input-group-text font-weight-bold'>Cost:</span>
+                      </div>
+                      <input type='number' class='form-control' name='cost'>
+                    </div>
+                  </div>
+                    <div class='row'>
+                        <div class='input-group mb-3 col-4'>
+                          <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Gender:</span>
+                          </div>
+                          <select name='gender' form='servants_form' class='form-control'>
+                              <option value=''></option>
+                              <option value='Male'>Male</option>
+                              <option value='Female'>Female</option>
+                              <option value='N/A'>N/A</option>
+                            </select>
+                        </div>
+                      <div class='input-group mb-3 col-4'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>Attribute:</span>
+                        </div>
+                        <input class='form-control' type='text' name='attribute'>
+                      </div>
+                      <div class='input-group mb-3 col-4'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>Alignment:</span>
+                        </div>
+                          <select name='alignment' form='servants_form' class='form-control'>
+                            <option value=''></option>
+                            <option value='Lawful Good'>Lawful Good</option>
+                            <option value='Neutral Good'>Neutral Good</option>
+                            <option value='Chaotic Good'>Chaotic Good</option>
+                            <option value='Lawful Neutral'>Lawful Neutral</option>
+                            <option value='Neutral'>Neutral</option>
+                            <option value='Chaotic Neutral'>Chaotic Neutral</option>
+                            <option value='Lawful Evil'>Lawful Evil</option>
+                            <option value='Neutral Evil'>Neutral Evil</option>
+                            <option value='Chaotic Evil'>Chaotic Evil</option>
+                          </select>
+                      </div>
+                    </div>
+                      <div class='input-group mb-3'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>Ascension 1 Image Link:</span>
+                        </div>
+                        <input type='hidden' name='ascension_stage' value='1'>
+                        <input class='form-control' type='text' name='ascension_image_link'>
+                      </div>
+                      <div class='input-group mb-3'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>Ascension 2 Image Link:</span>
+                        </div>
+                        <input type='hidden' name='ascension_stage' value='2'>
+                        <input class='form-control' type='text' name='ascension_image_link'>
+                      </div>
+                      <div class='input-group mb-3'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>Ascension 3 Image Link:</span>
+                        </div>
+                        <input type='hidden' name='ascension_stage' value='3'>
+                        <input class='form-control' type='text' name='ascension_image_link'>
+                      </div>
+                      <div class='input-group mb-3'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>Ascension 4 Image Link:</span>
+                        </div>
+                        <input type='hidden' name='ascension_stage' value='4'>
+                        <input class='form-control' type='text' name='ascension_image_link'>
+                      </div>
+                    </div>
+                <div class='row text-center'>
+                  <div class='col'>
+                    <table class='table text-center'>
+                        <thead>
+                            <tr>
+                                <th>Deck</th>
+                                <th>Card Type</th>
+                                <th>Hit Count</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope='row'>
+                              <select class='form-control font-weight-bold' name='deck' form='servants_form'>
+                                <option value=''></option>
+                                <option value='buster'>Buster</option>
+                                <option value='arts'>Arts</option>
+                                <option value='quick'>Quick</option>
+                              </select>
+                            </th>
+                            <th>Buster<input type='hidden' name='hit_count_card_type' value='buster'></th>
+                            <th><input class='form-control' type='number' name='hit_count_hits' form='servants_form'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>
+                              <select class='form-control font-weight-bold' name='deck' form='servants_form'>
+                                <option value=''></option>
+                                <option value='buster'>Buster</option>
+                                <option value='arts'>Arts</option>
+                                <option value='quick'>Quick</option>
+                              </select>
+                            </th>
+                            <th>Arts<input type='hidden' name='hit_count_card_type' value='arts'></th>
+                            <th><input class='form-control' type='number' name='hit_count_hits' form='servants_form'></th>
+                        </tr>
+                        <tr>
+                          <th scope='row'>
+                            <select class='form-control font-weight-bold' name='deck' form='servants_form'>
+                              <option value=''></option>  
+                              <option value='buster'>Buster</option>
+                                <option value='arts'>Arts</option>
+                                <option value='quick'>Quick</option>
+                            </select>
+                          </th>
+                          <th>Quick<input type='hidden' name='hit_count_card_type' value='quick'></th>
+                          <th><input class='form-control' type='number' name='hit_count_hits' form='servants_form'></th>
+                        </tr>
+                        <tr>
+                          <th scope='row'>
+                            <select class='form-control font-weight-bold' name='deck' form='servants_form'>
+                              <option value=''></option>
+                              <option value='buster'>Buster</option>
+                              <option value='arts'>Arts</option>
+                              <option value='quick'>Quick</option>
+                            </select>
+                          </th>
+                          <th>Extra<input type='hidden' name='hit_count_card_type' value='extra'></th>
+                          <th><input class='form-control' type='number' name='hit_count_hits' form='servants_form'></th>
+                        </tr>
+                        <tr>
+                          <th scope='row'>
+                            <select class='form-control font-weight-bold' name='deck' form='servants_form'>
+                              <option value=''></option>  
+                              <option value='buster'>Buster</option>
+                                <option value='arts'>Arts</option>
+                                <option value='quick'>Quick</option>
+                            </select>
+                          </th>
+                        </tr>
+                            
+                    </table>
+                  </div>
+                </div>
+                <div class='row text-center'>
+                  <div class='col ml-3'>
+                    <div class='row'>
+                      <div class='input-group mb-3 col-4'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Base Attack:</span>
+                        </div>
+                            <input class='form-control' type='number' name='base_attack'>
+                      </div>
+                      <div class='input-group mb-3 col-4'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Max Attack:</span>
+                        </div>
+                            <input class='form-control' type='number' name='max_attack'>
+                      </div>
+                      <div class='input-group mb-3 col-4'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Grailed Attack:</span>
+                        </div>
+                            <input class='form-control' type='number' name='grailed_max_attack'>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class='input-group mb-3 col-4'>
+                          <div class='input-group-prepend'>
+                              <span  class='input-group-text font-weight-bold'>Base Health:</span>
+                          </div>
+                              <input class='form-control' type='number' name='base_health'>
+                        </div>
+                        <div class='input-group mb-3 col-4'>
+                          <div class='input-group-prepend'>
+                              <span  class='input-group-text font-weight-bold'>Max Health:</span>
+                          </div>
+                              <input class='form-control' type='number' name='max_health'>
+                        </div>
+                        <div class='input-group mb-3 col-4'>
+                          <div class='input-group-prepend'>
+                              <span  class='input-group-text font-weight-bold'>Grailed Health:</span>
+                          </div>
+                              <input class='form-control' type='number' name='grailed_max_health'>
+                        </div>
+                    </div>
+                      
+                    <div class='row'>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>NP Gain on Hit (%):</span>
+                        </div>
+                            <input class='form-control' type='number' step=0.01 name='np_gain_per_hit_percent'>
+                      </div>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>NP Gain when Attacked (%):</span>
+                        </div>
+                            <input class='form-control' type='number' name='np_gain_when_attacked'>
+                      </div>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Star Absorption:</span>
+                        </div>
+                            <input class='form-control' type='number' name='star_absorption'>
+                      </div>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Star Generation per Hit (%):</span>
+                        </div>
+                            <input class='form-control' type='number' step=0.01 name='star_gen_per_hit_percent'>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Instant Death Chance (%):</span>
+                        </div>
+                            <input class='form-control' type='number' step=0.01 name='instant_death_chance'>
+                      </div>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Place of Origin:</span>
+                        </div>
+                            <input class='form-control' type='text' name='place_of_origin'>
+                      </div>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Illustrator:</span>
+                        </div>
+                            <input class='form-control' type='text' name='illustrator'>
+                      </div>
+                      <div class='input-group mb-3 col-3'>
+                        <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>Seiyuu:</span>
+                        </div>
+                            <input class='form-control' type='text' name='seiyuu'>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class='input-group mb-3 col-2'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>STR:</span>
+                        </div>
+                        <input type='hidden' name='parameter_type' value='STR'>
+                        <input class='form-control' type='text' name='parameter_rank'>
+                      </div>
+                      <div class='input-group mb-3 col-2'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>AGL:</span>
+                        </div>
+                        <input type='hidden' name='parameter_type' value='AGL'>
+                        <input class='form-control' type='text' name='parameter_rank'>
+                      </div>
+                      <div class='input-group mb-3 col-2'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>LUK:</span>
+                        </div>
+                        <input type='hidden' name='parameter_type' value='LUK'>
+                        <input class='form-control' type='text' name='parameter_rank'>
+                      </div>
+                      <div class='input-group mb-3 col-2'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>END:</span>
+                        </div>
+                        <input type='hidden' name='parameter_type' value='END'>
+                        <input class='form-control' type='text' name='parameter_rank'>
+                      </div>
+                      <div class='input-group mb-3 col-2'>
+                        <div class='input-group-prepend'>
+                          <span  class='input-group-text font-weight-bold'>MP:</span>
+                        </div>
+                        <input type='hidden' name='parameter_type' value='MP'>
+                        <input class='form-control' type='text' name='parameter_rank'>
+                      </div>
+                      <div class='input-group mb-3 col-2'>
+                          <div class='input-group-prepend'>
+                            <span  class='input-group-text font-weight-bold'>NP:</span>
+                          </div>
+                          <input type='hidden' name='parameter_type' value='NP'>
+                          <input class='form-control' type='text' name='parameter_rank'>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Traits:</span>
+                    </div>
+                      <input class='form-control' type='text' name='traits'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Nicknames/Alias:</span>
+                    </div>
+                      <input class='form-control' type='text' name='nicknames'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Character Info:</span>
+                    </div>
+                      <input class='form-control' type='text' name='character_info'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2'>
+                  <input class='form-check-input' type='checkbox' value="true" name='class_skill_check'> 
+                  <label class='form-check-label'>Check here if skill exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Class Skill:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_name'>
+                </div>
+                <div class='input-group mb-3 col-2'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Rank:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_rank'>
+                </div>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_description'>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='form-check ml-2'>
+                <input class='form-check-input' type='checkbox' value="true" name='class_skill_check'> 
+                <label class='form-check-label'>Check here if skill exists.</label>
+              </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Class Skill:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_name'>
+                </div>
+                <div class='input-group mb-3 col-2'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Rank:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_rank'>
+                </div>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2'>
+                  <input class='form-check-input' type='checkbox' value="true" name='class_skill_check'> 
+                  <label class='form-check-label'>Check here if skill exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Class Skill:</span>
+                  </div>
+                  <input class='form-control' type='text' name='class_skill_name'>
+                </div>
+                <div class='input-group mb-3 col-2'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Rank:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_rank'>
+                </div>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2'>
+                  <input class='form-check-input' type='checkbox' value="true" name='class_skill_check'> 
+                  <label class='form-check-label'>Check here if skill exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Class Skill:</span>
+                  </div>
+                  <input class='form-control' type='text' name='class_skill_name'>
+                </div>
+                <div class='input-group mb-3 col-2'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Rank:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_rank'>
+                </div>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2'>
+                  <input class='form-check-input' type='checkbox' value="true" name='class_skill_check'> 
+                  <label class='form-check-label'>Check here if skill exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Class Skill:</span>
+                  </div>
+                  <input class='form-control' type='text' name='class_skill_name'>
+                </div>
+                <div class='input-group mb-3 col-2'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Rank:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_rank'>
+                </div>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='class_skill_description'>
+                </div>
+              </div>
+              <h3>Servant Skills:</h3>
+              <h5>Skill 1</h5>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input type='hidden' name='servant_skills_number' value=1>  
+                  <input class='form-control' type='text' name='servant_skills_name'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='servant_skills_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2 mb-1 form-check-inline'>
+                  <input class='form-check-input' type='radio' value="true" name='servant_skills_upgraded_1' >
+                  <label class='form-check-label'>Click here if skill enhancement exists.</label>
+                  <input class='form-check-input ml-2' type='radio' value='false' name='servant_skills_upgraded_1'  checked> 
+                  <label class='form-check-label'>No skill enhancement exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input type='hidden' name='servant_skills_number_upgraded' value=1>  
+                  <input class='form-control' type='text' name='servant_skills_name_upgraded'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='servant_skills_description_upgraded'>
+                </div>
+              </div>
+              <h5>Skill 2</h5>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input type='hidden' name='servant_skills_number' value=2>  
+                  <input class='form-control' type='text' name='servant_skills_name'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='servant_skills_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2 mb-1 form-check-inline'>
+                  <input class='form-check-input' type='radio' value="true" name='servant_skills_upgraded_2'>
+                  <label class='form-check-label'>Click here if skill enhancement exists.</label>
+                  <input class='form-check-input ml-2' type='radio' value='false' name='servant_skills_upgraded_2' checked> 
+                  <label class='form-check-label'>No skill enhancement exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input type='hidden' name='servant_skills_number_upgraded' value=2>  
+                  <input class='form-control' type='text' name='servant_skills_name_upgraded'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='servant_skills_description_upgraded'>
+                </div>
+              </div>
+              <h5>Skill 3</h5>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input type='hidden' name='servant_skills_number' value=3>  
+                  <input class='form-control' type='text' name='servant_skills_name'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='servant_skills_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='form-check ml-2 mb-1 form-check-inline'>
+                  <input class='form-check-input' type='radio' value="true" name='servant_skills_upgraded_3'>
+                  <label class='form-check-label'>Click here if skill enhancement exists.</label>
+                  <input class='form-check-input ml-2' type='radio' value='false' name='servant_skills_upgraded_3' checked> 
+                  <label class='form-check-label'>No skill enhancement exists.</label>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input type='hidden' name='servant_skills_number_upgraded' value=3>  
+                  <input class='form-control' type='text' name='servant_skills_name_upgraded'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='servant_skills_description_upgraded'>
+                </div>
+              </div>
+              <h3>Noble Phantasm:</h3>
+              <div class='row'>
+                <div class='input-group mb-3 col-4'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Name:</span>
+                  </div>
+                  <input class='form-control' type='text' name='noble_phantasm_name'>
+                </div>
+                <div class='input-group mb-3 col-8'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Description:</span>
+                  </div>
+                    <input class='form-control' type='text' name='noble_phantasm_description'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-3'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Card Type:</span>
+                    </div>
+                    <select class='form-control font-weight-bold' name='noble_phantasm_card_type' form='servants_form'>
+                      <option value=''></option>  
+                      <option value='buster'>Buster</option>
+                        <option value='arts'>Arts</option>
+                        <option value='quick'>Quick</option>
+                    </select>                    
+                </div>
+                <div class='input-group mb-3 col-3'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Hit Count:</span>
+                  </div>
+                  <input class='form-control' type='number' name='noble_phantasm_hit_count'>
+                </div>
+                <div class='input-group mb-3 col-3'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Rank:</span>
+                  </div>
+                  <input class='form-control' type='text' name='noble_phantasm_rank'>
+                </div>
+                <div class='input-group mb-3 col-3'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Classification:</span>
+                  </div>
+                  <input class='form-control' type='text' name='noble_phantasm_classification'>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Effect:</span>
+                  </div>
+                    <input class='form-control' type='text' name='noble_phantasm_effect'>
+                </div>
+                <div class='input-group mb-3 col-6'>
+                  <div class='input-group-prepend'>
+                    <span  class='input-group-text font-weight-bold'>Overcharge Effect:</span>
+                  </div>
+                    <input class='form-control' type='text' name='noble_phantasm_overcharge'>
+                </div>
+                <input type='hidden' name='noble_phantasm_upgraded' value=false>
+              </div>
+
+              <div class='row'>
+                <div class='form-check ml-2 mb-1 form-check-inline'>
+                  <input class='form-check-input' type='radio' value="true" name='noble_phantasm_upgraded'>
+                  <label class='form-check-label'>Click here if NP enhancement exists.</label>
+                  <input class='form-check-input ml-2' type='radio' value='false' name='noble_phantasm_upgraded' checked> 
+                  <label class='form-check-label'>No NP enhancement exists.</label>
+                </div>
+              </div>
+
+              <div class='row'>
+                  <div class='input-group mb-3 col-4'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Name:</span>
+                    </div>
+                    <input class='form-control' type='text' name='noble_phantasm_name'>
+                  </div>
+                  <div class='input-group mb-3 col-8'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Description:</span>
+                    </div>
+                      <input class='form-control' type='text' name='noble_phantasm_description'>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class='input-group mb-3 col-3'>
+                      <div class='input-group-prepend'>
+                        <span  class='input-group-text font-weight-bold'>Card Type:</span>
+                      </div>
+                      <select class='form-control font-weight-bold' name='noble_phantasm_card_type' form='servants_form'>
+                        <option value=''></option>  
+                        <option value='buster'>Buster</option>
+                          <option value='arts'>Arts</option>
+                          <option value='quick'>Quick</option>
+                      </select>                    
+                  </div>
+                  <div class='input-group mb-3 col-3'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Hit Count:</span>
+                    </div>
+                    <input class='form-control' type='number' name='noble_phantasm_hit_count'>
+                  </div>
+                  <div class='input-group mb-3 col-3'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Rank:</span>
+                    </div>
+                    <input class='form-control' type='text' name='noble_phantasm_rank'>
+                  </div>
+                  <div class='input-group mb-3 col-3'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Classification:</span>
+                    </div>
+                    <input class='form-control' type='text' name='noble_phantasm_classification'>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class='input-group mb-3 col-6'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Effect:</span>
+                    </div>
+                      <input class='form-control' type='text' name='noble_phantasm_effect'>
+                  </div>
+                  <div class='input-group mb-3 col-6'>
+                    <div class='input-group-prepend'>
+                      <span  class='input-group-text font-weight-bold'>Overcharge Effect:</span>
+                    </div>
+                      <input class='form-control' type='text' name='noble_phantasm_overcharge'>
+                  </div>
+                </div>
+                <h3>Ascension & Skill Enhancement Materials:</h3>
+                <div class='row'>
+                  <div class='col-6'>
+                    <h5>Ascension Materials:</h5>
+                    <table class='table text-center'>
+                      <thead>
+                          <tr>
+                              <th>Stage</th>
+                              <th>QP Cost</th>
+                              <th>Material</th>
+                              <th>Quantity</th>
+                          </tr>
+                      </thead>
+                      <tr>
+                          <th scope='row'>2<input type='hidden' name='ascension_materials_stage' value=2></th>
+                          <th><input type='number' name='ascension_materials_qp_cost'></th>
+                          <th><input class='form-control' type='text' name='ascension_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='ascension_materials_materials_amount'></th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th><input class='form-control' type='text' name='ascension_materials_materials_name'></th>
+                        <th><input class='form-control' type='number' name='ascension_materials_materials_amount'></th>
+                      </tr>
+                      <tr>
+                          <th scope='row'>3<input type='hidden' name='ascension_materials_stage' value=3></th>
+                          <th><input type='number' name='ascension_materials_qp_cost'></th>
+                          <th><input class='form-control' type='text' name='ascension_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='ascension_materials_materials_amount'></th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th><input class='form-control' type='text' name='ascension_materials_materials_name'></th>
+                        <th><input class='form-control' type='number' name='ascension_materials_materials_amount'></th>
+                      </tr>
+                      <tr>
+                          <th scope='row'>4<input type='hidden' name='ascension_materials_stage' value=4></th>
+                          <th><input type='number' name='ascension_materials_qp_cost'></th>
+                          <th><input class='form-control' type='text' name='ascension_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='ascension_materials_materials_amount'></th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th><input class='form-control' type='text' name='ascension_materials_materials_name'></th>
+                        <th><input class='form-control' type='number' name='ascension_materials_materials_amount'></th>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class='col-6'>
+                    <h5>Skill Enhancement Materials:</h5>
+                    <table class='table text-center'>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>QP Cost</th>
+                                <th>Material</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th scope='row'>1/2<input type='hidden' name='skill_enhancement_materials_end_level' value=2></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>2/3<input type='hidden' name='skill_enhancement_materials_end_level' value=3></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>3/4<input type='hidden' name='skill_enhancement_materials_end_level' value=4></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>4/5<input type='hidden' name='skill_enhancement_materials_end_level' value=5></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>5/6<input type='hidden' name='skill_enhancement_materials_end_level' value=6></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>6/7<input type='hidden' name='skill_enhancement_materials_end_level' value=7></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>7/8<input type='hidden' name='skill_enhancement_materials_end_level' value=8></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>8/9<input type='hidden' name='skill_enhancement_materials_end_level' value=9></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                            <th scope='row'>9/10<input type='hidden' name='skill_enhancement_materials_end_level' value=10></th>
+                            <th><input type='number' name='skill_enhancement_materials_qp_cost'></th>
+                            <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                            <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                          <th><input class='form-control' type='text' name='skill_enhancement_materials_materials_name'></th>
+                          <th><input class='form-control' type='number' name='skill_enhancement_materials_materials_amount'></th>
+                        </tr>
+                      </table>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+          <input class='btn-lg btn-primary' type='submit' value='Submit'>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

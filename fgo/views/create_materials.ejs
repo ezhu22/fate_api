@@ -1,0 +1,59 @@
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <h1>Add Material:</h1>
+  <form action="/api/v1/materials", method="POST" id='materials_form'>
+    <div class='form-group'>
+      <div class='row justify-content-between'>
+        <div class='input-group mb-3 ml-4 col-3'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text font-weight-bold'>Material Name:</span>
+          </div>
+          <input class='form-control' type='text' name='name'>
+        </div>
+        <div class='input-group mb-3 col-5'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text font-weight-bold'>Image Link:</span>
+          </div>
+          <input class='form-control' type='text' name='image_link'>
+        </div>
+        <div class='input-group mb-3 mr-4 col-3'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text font-weight-bold'>Classification:</span>
+          </div>
+          <select class='form-control' name='classification' form='materials_form'>
+            <option value='Skill Up & Ascension Material'>Skill Up & Ascension Material</option>
+            <option value='Ascension Material'>Ascension Material</option>
+            <option value='Skill Up Material'>Skill Up Material</option>
+          </select>        
+        </div>
+      </div>
+      <div class='row justify-content-between'>
+        <div class='input-group mb-3 ml-4 col-3'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text font-weight-bold'>Grade:</span>
+          </div>
+          <select class='form-control' name='grade' form='materials_form'>
+            <option value='Bronze'>Bronze</option>
+            <option value='Silver'>Silver</option>
+            <option value='Gold'>Gold</option>
+          </select>        
+        </div>
+        <div class='input-group mb-3 col-5'>
+            <div class='input-group-prepend'>
+              <span class='input-group-text font-weight-bold'>Description:</span>
+            </div>
+            <input class='form-control' type='text' name='description'>
+          </div>
+          <div class='input-group mb-3 mr-4 col-3'>
+              <div class='input-group-prepend'>
+                <span class='input-group-text font-weight-bold'>Number:</span>
+              </div>
+              <input class='form-control' type='number' name='number'>
+            </div>
+      </div>
+      <input class='ml-4 btn-lg btn-primary' type='submit' value='submit'>
+    </div>
+  </form>
+</body>
